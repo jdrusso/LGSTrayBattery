@@ -23,7 +23,14 @@ namespace LGSTrayHID
             GlobalSettings.settings = builder.Configuration.GetSection("Native")
                 .Get<NativeDeviceManagerSettings>() ?? GlobalSettings.settings;
 
+            var arctis = builder.Configuration.GetSection("Arctis").Get<IDeviceManagerSettings>();
+            bool arctisEnabled = arctis?.Enabled ?? false;
+
             builder.Services.AddLGSMessagePipe();
+            if (arctisEnabled)
+            {
+                builder.Services.AddHostedService<ArctisManagerService>();
+            }
             builder.Services.AddHostedService<HidppManagerService>();
 
             var host = builder.Build();

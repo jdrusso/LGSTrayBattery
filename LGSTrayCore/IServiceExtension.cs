@@ -24,7 +24,7 @@ public static class IServiceExtension
         bool isEnabled = typeof(T) switch
         {
             { } when typeof(T) == typeof(GHubManager) => settings.GHub.Enabled,
-            { } when typeof(T) == typeof(LGSTrayHIDManager) => settings.Native.Enabled,
+            { } when typeof(T) == typeof(LGSTrayHIDManager) => (settings.Native.Enabled || settings.Arctis.Enabled),
             _ => false
         };
         if (!isEnabled) return;

@@ -130,6 +130,7 @@ namespace LGSTrayUI.Properties {
             }
         }
         
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>

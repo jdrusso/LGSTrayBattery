@@ -9,6 +9,8 @@ public class AppSettings
     public IDeviceManagerSettings GHub { get; set; } = null!;
 
     public NativeDeviceManagerSettings Native { get; set; } = null!;
+
+    public IDeviceManagerSettings Arctis { get; set; } = null!;
 }
 
 public class UISettings
