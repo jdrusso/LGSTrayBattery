@@ -33,6 +33,6 @@ jobs:
       run: |
         $commit_ts=git show --no-patch --format=%at
         $commit_ds=(([System.DateTimeOffset]::FromUnixTimeSeconds($commit_ts)).DateTime).ToString("yyyyMMdd")
-        gh release create -R "jdrusso/LGSTrayBattery-nightly" `
+        gh release create -R "jdrusso/LGSTrayBattery" `
           $commit_ds `
           (get-item ./bin/Release/publish/*.zip)
