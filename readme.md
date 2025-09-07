@@ -22,6 +22,9 @@ Please, visit [the latest release page](https://github.com/andyvorld/LGSTrayBatt
 - Migrated to using a `.toml` for appsettings
 
 ## Features
+### SteelSeries Arctis Support
+Monitor battery status of supported SteelSeries Arctis headsets via HID.
+
 ### Tray Indicator
 ![image](https://user-images.githubusercontent.com/24492062/138280300-6966b6a4-ff6d-46e6-9698-d2c8d612eb11.png)
 
@@ -32,7 +35,7 @@ Right-click for more options.
 ### Multiple Icons
 ![image](Assets/multi_icon.png)
 
-Depending on the number of devices selected in the context menu, multiple devices can be seen simultatniously
+Depending on the number of devices selected in the context menu, multiple devices can be seen simultaneously
 
 ### Numerical Icons
 ![image](Assets/numerical_icon.png)
@@ -90,10 +93,11 @@ Device ids starting with `dev` originates from tapping into Logitech GHUB's own 
 \*** - Logitech G Hub's metric of estimated life left on the battery
 
 ## HID++ Device Sources
-As of v3.0.0, there are 2 sources in which the program will pull battery status,
+As of v3.1.0, there are 3 sources in which the program will pull battery status,
 
 - Logitech G Hub via Websockets
 - Native HID, hidapi via PInvoke (Called "Native" in settings)
+- SteelSeries Arctis headsets via hidapi (Called "Arctis" in settings)
 
 These sources can be individually disabled/enabled before runtime via `appsettings.toml`, in the their respective sections,
 
@@ -102,6 +106,9 @@ These sources can be individually disabled/enabled before runtime via `appsettin
 enabled = true
 
 [Native]
+enabled = true
+
+[Arctis]
 enabled = true
 ```
 

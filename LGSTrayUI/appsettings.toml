@@ -22,3 +22,5 @@ pollPeriod = 600
 # List of disabled devices
 disabledDevices = [
 ]
+[Arctis]
+enabled = true
